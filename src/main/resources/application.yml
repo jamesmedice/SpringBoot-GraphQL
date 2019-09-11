@@ -1,0 +1,26 @@
+server:
+  port: ${PORT:8001}
+
+graphql:
+  servlet:
+    exception-handlers-enabled: true
+    mapping: /graphql
+    enabled: true
+    corsEnabled: true
+  tools:
+    schema-location-pattern: "classpath*:**/*.graphqls"
+    introspection-enabled: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sakila
+    username: root
+    password: tpm1234
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect

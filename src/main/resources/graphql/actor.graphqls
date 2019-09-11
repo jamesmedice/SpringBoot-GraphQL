@@ -1,0 +1,19 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Actor {
+  actor_id: Int
+  first_name: String
+  last_name: String
+}
+
+type Query {
+  findById(id: Int!) : Actor
+  findAll: [Actor]!
+}
+
+type Mutation {
+    save(actor_id: ID!, first_name: String!, last_name: String! ) : Actor!  
+}
